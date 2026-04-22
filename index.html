@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #000;
+        }
+        #slideshow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+<img id="slideshow" src="IMAGE1_HERE">
+
+<script>
+    // Put your Discord CDN links here
+    const images = [
+        "https://media.discordapp.net/attachments/1496304738407546910/1496304739837677578/4000_633.jpg?ex=69e965e1&is=69e81461&hm=9400cce39ad7a539b12cf140f0acb53276606c0740aa34bbbb53b72c01ffd875&=&format=webp",
+        "https://media.discordapp.net/attachments/1496304738407546910/1496304739145748630/4000_596.jpg?ex=69e965e1&is=69e81461&hm=95c77921ebb9d95bd32e3e4012190122ee75062a247351b7ab001cba495f0b82&=&format=webp",
+        "https://cdn.discordapp.com/attachments/1496304738407546910/1496304738629718096/4000_640.jpg?ex=69e965e1&is=69e81461&hm=03304cb281859587b0d7e5c0aa1b73c69151ed737bd6362a36cebc8047aec3e8&"
+    ];
+
+    let index = 0;
+    const img = document.getElementById("slideshow");
+
+    setInterval(() => {
+        index = (index + 1) % images.length;
+        img.src = images[index];
+    }, 4000); // 4 seconds per image
+</script>
+
+</body>
+</html>
